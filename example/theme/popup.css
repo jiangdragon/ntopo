@@ -1,0 +1,73 @@
+.ui-popup {
+    position: absolute;
+    cursor: default;
+    min-height: 50px;
+    z-index: 1000;
+}
+
+/*head*/
+.ui-popup .head {
+    border-width: 0px 0px 1px 0px;
+    height: 31px;
+}
+
+.ui-popup .head .title {
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0px 35px 0px 11px !important;
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+}
+
+.ui-popup .head .button {
+    position: absolute;
+    float: right;
+    width: 32px;
+    height: 30px;
+    top: 0px;
+    right: 0px;
+}
+
+.ui-popup .head .button span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 9px;
+    cursor: pointer;
+    right: 12px;
+    background: url(img/iw_close.gif) no-repeat 0px 0px;
+}
+
+/*body*/
+.ui-popup .popup_body {
+    position: relative;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ui-popup .popup_body li {
+    line-height: 22px;
+}
+
+/*bottom*/
+.ui-popup .popup_bottom {
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+
+.ui-popup .popup_bottom span {
+    position: absolute;
+    width: 58px;
+    height: 31px;
+    top: 0px;
+    background: url(img/iw_tail.png) no-repeat 0px 0px;
+}

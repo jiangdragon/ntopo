@@ -1,0 +1,44 @@
+.ui-menu{
+	width:100px;
+	padding:0px;
+	border-left-width:12px;
+	z-index:1000;
+}
+.ui-menu li{
+	list-style: none;
+
+}
+
+.ui-menu-item-wrap{
+	width:100px;
+	padding:0px;
+	display: none;
+}
+
+.ui-menu-icon{
+	width:16px;
+	height: 16px;
+	display: inline-block;
+}
+.ui-menu-slave-text{
+	height:23px;
+	padding-top:5px;
+	display:inline-block;
+}
+.ui-menu-slave-more{
+	width:16px;
+	height:16px;
+	margin-top:5px;
+	display:inline-block;
+}
+
+.ui-menu-item{
+	width:100px;
+	height:23px;
+	padding-top:5px;
+	cursor: pointer;
+}
+.ui-menu-separator{
+	width:100px;
+	border-width: 0px 0px 1px 0px;
+}

@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/****************************nav-header*****************************/
+.nav-header {
+    min-height: 40px;
+    background-color: #25272c;
+    margin: 0px 15px;
+}
+
+.nav-header .nav-header-icon {
+    display: block;
+    float: left;
+    width: 210px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.nav-header ul {
+    height: 40px;
+    overflow: hidden;
+}
+
+.nav-header ul li {
+    float: left;
+    height: 100%;
+    line-height: 40px;
+    padding: 0px 2px;
+}
+
+/****************************a target*****************************/
+.nav-header ul li a {
+    display: block;
+    width: 60px;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-position: left center;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.nav-header ul li a:hover {
+    background-position: right center;
+}
+
+.nav-header .selected {
+    background-position: right center;
+}
+
+/****************************图标*****************************/
+.nav-header-button {
+    background-image: url("img/nav-header-button.png");
+}
+
+/****************************container*****************************/
+.container {
+    position: absolute;
+    top: 40px;
+    bottom: 5px;
+    left: 15px;
+    right: 15px;
+}
+
+/****************************left right*****************************/
+.col-md-left, .col-md-right {
+    position: relative;
+    min-height: 300px;
+    height: 100%;
+    float: left;
+}
+
+.col-md-left {
+    width: 33%;
+    padding-right: 15px;
+}
+
+.col-md-right {
+    width: 67%;
+}
+
+/*left */
+.col-md-left .code-header {
+    display: block;
+    padding: 3px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #999999;
+    text-transform: uppercase;
+    border-width: 1px 1px 0px 1px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.col-md-left .code {
+    position: absolute;
+    top: 27px;
+    bottom: 0px;
+    left: 0px;
+    right: 15px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+/*right*/
+.col-md-right .main {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}

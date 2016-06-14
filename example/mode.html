@@ -1,0 +1,96 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>模式匹配示例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
+    <script type="text/javascript" src="../lib/import.js"></script>
+</head>
+<body>
+<div id="header" class="nav-header">
+    <div class="nav-header-icon">NTOPO</div>
+    <ul>
+        <li><a class="nav-header-button" onclick="refresh()" href="javascript:void(0)" title="运行">运行</a></li>
+        <li><a class="nav-header-button" onclick="screen()" href="javascript:void(0)" title="切换视图">切换视图</a></li>
+        <li><a class="nav-header-button" onclick="exportToXMLToTextArea()" href="javascript:void(0)" title="导出">导出</a></li>
+    </ul>
+</div>
+
+<div id="container" class="container">
+    <div class="col-md-left">
+        <div class="code-header ls1 lr04">code示例</div>
+        <div class="code ls1 lr04">
+            <textarea id="code">
+<topo>
+    <lines>
+        <line id="line001" type="line1" start="device002" end="device001"/>
+        <line id="line002" type="line1" start="device001" end="device003"/>
+        <line id="line003" type="line1" start="device001" end="device004"
+              stroke="#7d70ff"/>
+    </lines>
+    <nodes>
+        <node id="device001" type="cloud" point="358,50" text="云入口"/>
+
+        <node id="device002" type="server" point="215,158" text="Component1">
+            <component type="circle" offset="20,-30" r="4" fill="#AAFFAA">
+                <r match="${alarm_num}&amp;gt;8" value="9"/>
+                <r match="${alarm_num}&amp;lt;=8" value="4"/>
+            </component>
+        </node>
+        <node id="device003" type="server" point="358,160" text="Component2">
+            <component type="circle" offset="20,-30" r="4" fill="#AAFFAA">
+                <r match="${alarm_num}&amp;gt;8" value="9"/>
+                <r match="${alarm_num}&amp;lt;=8" value="4"/>
+            </component>
+            <component type="circle" offset="-20,-30" r="4" fill="#AAFFAA">
+                <fill match="${alarm_level}&amp;gt;3" value="#FF0000"/>
+                <fill match="${alarm_level}&amp;lt;=3" value="#00FF00"/>
+            </component>
+        </node>
+
+        <node id="device004" type="server" point="500,170" text="Component3"/>
+    </nodes>
+
+    <types>
+        <type name="server">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/server.png</property>
+            <property key="title">${text}</property>
+
+            <component type="circle" offset="20,-30" r="4" fill="#AAFFAA">
+                <blink match="true"></blink>
+            </component>
+        </type>
+        <type name="cloud">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/007.png</property>
+        </type>
+
+        <type name="line1">
+            <property key="shape">line</property>
+            <property key="stroke">#57C600</property>
+        </type>
+    </types>
+
+    <modes>
+        <mode name="view" default="true">
+            <permission name="LineEdit">Deny</permission>
+            <permission name="Zoom">Allow</permission>
+        </mode>
+        <mode name="edit" default="false">
+            <permission name="LineEdit">Allow</permission>
+        </mode>
+    </modes>
+</topo>
+            </textarea>
+            </div>
+        </div>
+        <div class="col-md-right">
+            <div class="main ls1 lr04" id="topo"></div>
+        </div>
+    </div>
+    <script src="../lib/example.js"></script>
+</body>
+</html>

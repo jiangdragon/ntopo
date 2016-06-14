@@ -1,0 +1,68 @@
+@charset "utf-8";
+/*@import "default/menu.css";*/
+@import "themes.css";
+@import "example.css";
+@import "menu.css";
+@import "popup.css";
+@import "ui-icon.css";
+@import "codemirror.css";
+@import "codemirror-monokai.css";
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    -o-box-sizing: border-box; /* Presto内核 */
+    -ms-box-sizing: border-box; /* IE8 */
+}
+
+/****************************Common*****************************/
+html, body {
+    background-color: #2f2f2f;
+    font-family: Arial, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+html, body, div, ul, li, p, span, samp, dl, dt, dd, table, td, input, h1, h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+#topo {
+    /*height: 100%;*/
+    /*width: 100%;*/
+}
+
+text::selection {
+    background-color: transparent;
+    color: white;
+}
+
+text::-moz-selection {
+    background-color: transparent;
+    color: white;
+}
+
+text::-webkit-selection {
+    background-color: transparent;
+    color: white;
+}
+
+#tooltip * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box; /* Firefox */
+    -webkit-box-sizing: content-box; /* Safari */
+    -o-box-sizing: content-box; /* Presto内核 */
+    -ms-box-sizing: content-box; /* IE8 */
+}
+
+/****************************theme*****************************/
+/*html,body,div,ul,li,p,span,table,td,input,h1,h4,input,textarea,select{color: #fff;}*/

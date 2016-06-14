@@ -1,0 +1,278 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>综合静态示例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
+    <script type="text/javascript" src="../lib/import.js"></script>
+</head>
+<body>
+<div id="header" class="nav-header">
+    <div class="nav-header-icon">NTOPO</div>
+    <ul>
+        <li><a class="nav-header-button" onclick="refresh()" href="javascript:void(0)" title="运行">运行</a></li>
+        <li><a class="nav-header-button" onclick="screen()" href="javascript:void(0)" title="切换视图">切换视图</a></li>
+        <li><a class="nav-header-button" onclick="exportToXMLToTextArea()" href="javascript:void(0)" title="导出">导出</a></li>
+    </ul>
+</div>
+
+<div id="container" class="container">
+    <div class="col-md-left">
+        <div class="code-header ls1 lr04">code示例</div>
+        <div class="code ls1 lr04">
+            <textarea id="code">
+<topo>
+    <lines>
+        <line id="line001" type="line1" start="device002" end="device001"/>
+        <line id="line002" type="line1" start="device003" end="device001"/>
+        <line id="line003" type="line1" start="device003" end="device002"
+              stroke="#7d70ff"/>
+        <line id="line004" type="line2" start="device004" end="device003"
+              stroke="#ffbba8"/>
+        <line id="line005" type="line2" start="device005" end="device004"
+              stroke="#ffbba8"/>
+        <line id="line006" type="line2" start="device006" end="device005"
+              stroke="#ffbba8"/>
+        <line id="line007" type="line2" start="device007" end="device006"
+              stroke="#ffbba8"/>
+        <line id="line008" type="line3" start="device008" end="device007"
+              stroke="#ff47a8"/>
+        <line id="line009" type="line5" start="device009" end="device011"
+              points="381,154" stroke="red"/>
+        <line id="line010" type="line5" start="device012" end="device009"
+              points="387,325" stroke="red"/>
+        <line id="line011" type="line1" start="device011" end="device010"/>
+        <line id="line012" type="line5" start="device012" end="device011"
+              stroke="red"/>
+        <line id="line013" type="line1" start="device013" end="device012"/>
+        <line id="line014" type="line3" start="device013" end="device007"
+              stroke="#ff47a8"/>
+        <line id="line015" type="line1" start="device013" end="device008"/>
+        <line id="line016" type="line1" start="device015" end="device014"/>
+        <line id="line017" type="line1" start="device017" end="device016"/>
+        <line id="line018" type="line4" start="device018" end="device015"
+              points="498,240" stroke="#99a2ff"/>
+        <line id="line019" type="line4" start="device018" end="device017"
+              stroke="#99a2ff"/>
+        <line id="line020" type="line1" start="device019" end="device018"
+              stroke="#fffa7a"/>
+        <line id="line021" type="line3" start="device020" end="device019"
+              stroke="#ff47a8"/>
+        <line id="line022" type="line3" start="device020" end="device008"
+              stroke="#ff47a8" points="573,489"/>
+        <line id="line023" type="line3" start="device013" end="device020"
+              stroke="#ff47a8"/>
+        <line id="line024" type="line1" start="device022" end="device021"/>
+        <line id="line025" type="line4" start="device018" end="device022"
+              points="654,242" stroke="#99a2ff"/>
+        <line id="line026" type="line1" start="device020" end="device023"
+              points="653,396">
+        </line>
+    </lines>
+    <nodes>
+        <node id="device001" type="server" point="93,102" text="右键菜单">
+            <property key="ip">1.2.3.1</property>
+        </node>
+        <node id="device002" type="server" point="94,225" text="自定义右键菜单">
+            <property key="ip">1.2.3.2</property>
+            <component type="menu">
+                <item id="file" label="文件" type="group">
+                    <item id="create" label="新建" onclick="rightMenuClick"/>
+                </item>
+                <item id="hideNode" label="隐藏节点" onclick="rightMenuClick"/>
+                <item id="delNode" label="删除节点" onclick="rightMenuClick"/>
+                <item id="Separator" type="Separator"/>
+                <item id="unSelectNode" label="反选节点" onclick="rightMenuClick"/>
+                <item id="reNameNode" label="重合名节点" onclick="rightMenuClick"/>
+                <item id="infoNode" label="节点基本属性" onclick="rightMenuClick"/>
+            </component>
+        </node>
+
+
+        <node id="device003" type="switch" point="232,96" text="思科C2960">
+            <property key="ip">1.2.3.3</property>
+            <property key="title">思科C2960</property>
+        </node>
+        <node id="device004" type="switch" point="232,191" text="属性规则1">
+            <property key="ip">192.168.73.241</property>
+            <property key="title">思科C3750</property>
+        </node>
+        <node id="device005" type="fire" point="233,254" text="属性规则2">
+            <property key="ip">1.2.3.5</property>
+            <property key="title">华依千兆防火墙</property>
+        </node>
+        <node id="device006" type="fire" point="231,340" text="网神防火墙">
+            <property key="ip">1.2.3.6</property>
+            <property key="title">网神防火墙</property>
+        </node>
+        <node id="device007" type="switch" point="231,414" text="思科C3650">
+            <property key="ip">1.2.3.7</property>
+            <property key="title">思科C3650</property>
+        </node>
+        <node id="device008" type="dSwitch" point="232,506" text="新机房核心H3CS12508">
+            <property key="ip">1.2.3.8</property>
+            <property key="title">新机房核心H3CS12508</property>
+        </node>
+
+
+        <node id="device009" type="fire" point="383,259" text="浮动窗1"
+              icon="./theme/device/fw1.png">
+            <property key="ip">1.2.3.13</property>
+            <property key="title">天融信百兆防火墙</property>
+        </node>
+        <node id="device010" type="cloud" point="420,96" text="属性规则闪烁1">
+            <property key="ip">1.2.3.17</property>
+            <property key="title">市政务外网</property>
+        </node>
+        <node id="device011" type="switch" point="425,169" text="思科C3750-2">
+            <property key="ip">1.2.3.12</property>
+            <property key="title">思科C3750-2</property>
+        </node>
+        <node id="device012" type="switch" point="433,339" text="思科C4506E">
+            <property key="ip">1.2.3.9</property>
+            <property key="title">思科C4506E</property>
+        </node>
+        <node id="device013" type="dSwitch" point="437,468" text="区域政府核心">
+            <property key="ip">1.2.3.10</property>
+            <property key="title">区域政府核心</property>
+        </node>
+
+        <node id="device014" type="cloud" point="502,101" text="属性规则闪烁2">
+            <property key="ip">1.2.3.18</property>
+            <property key="title">联通互联网出口</property>
+            <component type="circle" offset="10,-30" r="4" fill="#AAFFAA"/>
+        </node>
+        <node id="device015" type="fire" point="500,169" text="华依百兆防火墙">
+            <property key="ip">1.2.3.14</property>
+            <property key="title">华依百兆防火墙</property>
+        </node>
+
+        <node id="device016" type="cloud" point="582,101" text="属性规则闪烁3">
+            <property key="ip">1.2.3.19</property>
+            <property key="title">电信互联网出口</property>
+        </node>
+        <node id="device017" type="fire" point="584,169" text="华依千兆防火墙-2">
+            <property key="ip">1.2.3.15</property>
+            <property key="title">华依千兆防火墙-2</property>
+        </node>
+        <node id="device018" type="other" point="583,259" text="负载均衡设备Radware 2016"
+              icon="./theme/device/003.png">
+            <property key="ip">1.2.3.21</property>
+            <property key="title">负载均衡设备Radware 2016</property>
+        </node>
+        <node id="device019" type="other" point="579,339" text="流控设备"
+              icon="./theme/device/002.png">
+            <property key="ip">1.2.3.22</property>
+            <property key="title">流控设备</property>
+        </node>
+        <node id="device020" type="switch" point="576,413" text="思科C3650-2">
+            <property key="ip">1.2.3.11</property>
+            <property key="title">思科C3650-2</property>
+        </node>
+
+        <node id="device021" type="cloud" point="655,103" text="属性规则闪烁4">
+            <property key="ip">1.2.3.20</property>
+            <property key="title">移动互联网出口</property>
+        </node>
+        <node id="device022" type="fire" point="655,170" text="浮动窗href"
+              icon="./theme/device/fw1.png">
+            <property key="ip">1.2.3.16</property>
+            <property key="title">天融信百兆防火墙-2</property>
+            <component type="popup" width="200" height="100" href="./data/popup.html"
+                       title="${text}">
+            </component>
+        </node>
+        <node id="device023" type="other" point="654,502" text="金盾上网行为管理服务器"
+              icon="./theme/device/001.png">
+            <property key="ip">1.2.3.23</property>
+            <property key="title">金盾上网行为管理服务器</property>
+        </node>
+    </nodes>
+    <groups>
+        <group id="group1" shape="group" bounds="20,20,300,500" text="新机房"
+               tPoint="100,40"/>
+        <group id="group2" shape="group" bounds="350,20,350,500" text="区政府机房"
+               tPoint="450,40"/>
+    </groups>
+
+    <types>
+        <type name="server">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/server.png</property>
+            <property key="title">${text}</property>
+            <component type="menu">
+                <item id="hideNode" label="匿名函数"
+                      onclick="function(item){alert('匿名函数执行;label:' + item.label);}"/>
+                <item id="delNode" label="JS脚本" onclick="alert('js脚本执行')"/>
+                <item id="Separator" type="Separator"/>
+                <item id="unSelectNode" label="超链接" onclick="href:http://www.topsec.com.cn"/>
+            </component>
+        </type>
+        <type name="switch">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/switch.gif</property>
+        </type>
+        <type name="dSwitch">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/switch1.gif</property>
+            <component type="circle" offset="-20,-30" r="4" fill="#AAFFAA"/>
+        </type>
+        <type name="fire">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/004.png</property>
+            <component type="popup" width="200" height="100" title="${text}">
+                <item label="设备名：">${text}</item>
+                <item label="设备IP：">${ip}</item>
+            </component>
+        </type>
+        <type name="cloud">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+            <property key="icon">./theme/device/007.png</property>
+        </type>
+        <type name="other">
+            <property key="shape">imageText</property>
+            <property key="iconSize">32,32</property>
+        </type>
+        <type name="line1">
+            <property key="shape">line</property>
+            <property key="stroke">#57C600</property>
+        </type>
+        <type name="line2">
+            <property key="shape">line</property>
+            <property key="stroke">#ffbba8</property>
+        </type>
+        <type name="line3">
+            <property key="shape">line</property>
+            <property key="stroke">#ffbba8</property>
+        </type>
+        <type name="line4">
+            <property key="shape">line</property>
+            <property key="stroke">#99a2ff</property>
+        </type>
+        <type name="line5">
+            <property key="shape">line</property>
+            <property key="stroke">red</property>
+        </type>
+    </types>
+    <modes>
+        <mode name="view" default="true">
+            <permission name="LineEdit">Allow</permission>
+            <permission name="Zoom">Allow</permission>
+        </mode>
+    </modes>
+</topo>
+            </textarea>
+        </div>
+    </div>
+    <div class="col-md-right">
+        <div class="main ls1 lr04" id="topo"></div>
+    </div>
+</div>
+<script src="../lib/example.js"></script>
+</body>
+</html>

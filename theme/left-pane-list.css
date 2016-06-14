@@ -1,0 +1,43 @@
+.ui-list-menu {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    display: block;
+    outline: none;
+}
+
+.ui-list-menu li {
+    font-size: 13px;
+}
+
+.ui-list-menu li:hover {
+    background: #1c1c1c;
+    font-weight: normal;
+}
+
+.ui-list-menu li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.ui-list-menu li a {
+    color: #222222;
+    text-decoration: none;
+    padding: 2px .4em;
+    line-height: 1.5;
+    font-weight: normal;
+    min-height: 0;
+    display: block;
+}
+
+.ui-state-hover {
+    border: 1px solid #000000;
+    background: #1c1c1c;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}

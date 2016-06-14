@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>节点示例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
+    <script type="text/javascript" src="../lib/import.js"></script>
+</head>
+<body>
+<div id="header" class="nav-header">
+    <div class="nav-header-icon">NTOPO</div>
+    <ul>
+        <li><a class="nav-header-button" onclick="refresh()" href="javascript:void(0)" title="运行">运行</a></li>
+        <li><a class="nav-header-button" onclick="screen()" href="javascript:void(0)" title="切换视图">切换视图</a></li>
+        <li><a class="nav-header-button" onclick="exportToXMLToTextArea()" href="javascript:void(0)" title="导出">导出</a></li>
+    </ul>
+</div>
+
+<div id="container" class="container">
+    <div class="col-md-left">
+        <div class="code-header ls1 lr04">code示例</div>
+        <div class="code ls1 lr04">
+            <textarea id="code">
+<topo>
+    <!--<lines>-->
+        <!--<line id="device004_device001" type="line1" start="device001" end="device004" shape="line"-->
+              <!--strokeDasharray="3" />-->
+        <!--<line id="device001_device005" type="line1" start="device001" end="device005" stroke="#ff47a8"/>-->
+        <!--<line id="device002_device005" type="line2" start="device002" end="device005" points="300,320 400,320"/>-->
+    <!--</lines>-->
+    <nodes>
+        <node id="device001" type="server" point="200,250" text="普通节点" />
+        <node id="device002" type="server" point="300,250" text="组件节点">
+            <component type="circle" offset="-20,-30" r="4" fill="#AAFFAA"/>
+        </node>
+        <node id="device003" type="server" point="400,250" text="闪烁节点">
+            <component type="circle" offset="20,-30" r="4" fill="#AAFFAA">
+                <match target="blink" condition="true" value=""/>
+            </component>
+        </node>
+        <node id="device004" type="server" point="200,400" text="信息节点" ip="1.2.3.1">
+            <popup width="200" height="100" title="${text}">
+                <item label="设备名：" value="${text}"/>
+                <item label="设备IP：" value="${ip}"/>
+            </popup>
+        </node>
+        <node id="device005" type="server" point="400,400" text="菜单节点">
+            <menu id="hideNode" label="匿名函数"
+                  onclick="function(item){alert('匿名函数执行;label:' + item.label);}" />
+            <menu id="delNode" label="JS脚本" onclick="alert('js脚本执行')"/>
+            <menu id="Separator" type="Separator"/>
+            <menu id="unSelectNode" label="超链接" onclick="href:http://www.topsec.com.cn"/>
+            <!--<component type="menu">-->
+                <!--<item id="hideNode" label="匿名函数"-->
+                      <!--onclick="function(item){alert('匿名函数执行;label:' + item.label);}"/>-->
+                <!--<item id="delNode" label="JS脚本" onclick="alert('js脚本执行')"/>-->
+                <!--<item id="Separator" type="Separator"/>-->
+                <!--<item id="unSelectNode" label="超链接" onclick="href:http://www.topsec.com.cn"/>-->
+            <!--</component>-->
+        </node>
+        <node id="device006" type="server" point="820,750" text="普通节点" />
+    </nodes>
+    <types>
+        <type name="server" shape="imageText" iconSize="32,32" icon="./theme/device/server.png" />
+        <!--<type name="line1" shape="curveLine" stroke="#57C600" />-->
+        <!--<type name="line2" shape="polyline" stroke="#167cff" />-->
+    </types>
+</topo>
+            </textarea>
+        </div>
+    </div>
+    <div class="col-md-right">
+        <div class="main ls1 lr04" id="topo"></div>
+    </div>
+</div>
+<script src="../lib/example.js"></script>
+</body>
+</html>

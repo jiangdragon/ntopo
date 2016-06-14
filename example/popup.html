@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>弹出框示例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
+    <script type="text/javascript" src="../lib/import.js"></script>
+</head>
+<body>
+<div id="header" class="nav-header">
+    <div class="nav-header-icon">NTOPO</div>
+    <ul>
+        <li><a class="nav-header-button" onclick="refresh()" href="javascript:void(0)" title="运行">运行</a></li>
+        <li><a class="nav-header-button" onclick="screen()" href="javascript:void(0)" title="切换视图">切换视图</a></li>
+        <li><a class="nav-header-button" onclick="exportToXMLToTextArea()" href="javascript:void(0)" title="导出">导出</a></li>
+    </ul>
+</div>
+
+<div id="container" class="container">
+    <div class="col-md-left">
+        <div class="code-header ls1 lr04">code示例</div>
+        <div class="code ls1 lr04">
+            <textarea id="code">
+<topo>
+    <nodes>
+        <node id="device001" type="server" point="200,300" text="浮动窗" ip="1.2.3.1">
+            <popup width="200" height="100" title="${text}">
+                <item label="设备名：" value="${text}"/>
+                <item label="设备IP：" value="${ip}"/>
+            </popup>
+        </node>
+        <node id="device002" type="server" point="400,300" text="浮动窗href" ip="1.2.3.2">
+            <popup width="200" height="100" title="${text}">
+                <href>./popup_href.html?id=${ip}</href>
+            </popup>
+        </node>
+    </nodes>
+    <types>
+        <type name="server" shape="imageText" iconSize="32,32" icon="./theme/device/server.png" />
+    </types>
+</topo>
+            </textarea>
+        </div>
+    </div>
+    <div class="col-md-right">
+        <div class="main ls1 lr04" id="topo"></div>
+    </div>
+</div>
+<script src="../lib/example.js"></script>
+</body>
+</html>

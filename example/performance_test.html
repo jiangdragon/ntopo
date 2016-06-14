@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>性能测试</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="./theme/style.css"/>
+    <script type="text/javascript" src="../lib/import.js"></script>
+</head>
+<body>
+<div id="header" class="nav-header">
+    <div class="nav-header-icon">NTOPO</div>
+    <ul>
+        <li><a class="nav-header-button" onclick="refresh()" href="javascript:void(0)" title="运行">运行</a></li>
+        <li><a class="nav-header-button" onclick="screen()" href="javascript:void(0)" title="切换视图">切换视图</a></li>
+        <li><a class="nav-header-button" onclick="exportToXMLToTextArea()" href="javascript:void(0)" title="导出">导出</a></li>
+        <li><a class="nav-header-button" onclick="performanceTest(1000)" href="javascript:void(0)" title="1000节点">1000节点</a></li>
+    </ul>
+</div>
+
+<div id="container" class="container">
+    <div class="col-md-left">
+        <div class="code-header ls1 lr04">code示例</div>
+        <div class="code ls1 lr04">
+            <textarea id="code">
+
+            </textarea>
+        </div>
+    </div>
+    <div class="col-md-right">
+        <div class="main ls1 lr04" id="topo"></div>
+    </div>
+</div>
+<script src="../lib/example.js"></script>
+</body>
+</html>
