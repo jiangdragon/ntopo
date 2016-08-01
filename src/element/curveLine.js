@@ -63,6 +63,37 @@ NTopo.plugin(function ($$) {
                     }
                 }
             }
+        },
+        toFormatObj: function () {
+            var result = {
+                id: this.id,
+                start: this.start,
+                end: this.end,
+                shape: "curveLine"
+            };
+            // 加入非默认属性
+            if (this.stroke != "white") {
+                result["stroke"] = this.stroke;
+            }
+            if (this.strokeDasharray) {
+                result["strokeDasharray"] = this.strokeDasharray;
+            }
+            if (this.strokeWidth != 2) {
+                result["strokeWidth"] = this.strokeWidth;
+            }
+            if (this.startText) {
+                result["sText"] = this.startText;
+            }
+            if (this.text) {
+                result["text"] = this.text;
+            }
+            if (this.endText) {
+                result["eText"] = this.endText;
+            }
+            if (this.markerEnd && this.markerEnd != "ARROW") {
+                result["markerEnd"] = this.markerEnd;
+            }
+            return result;
         }
     });
 

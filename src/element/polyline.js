@@ -509,7 +509,8 @@ NTopo.plugin(function ($$) {
             var result = {
                 id: this.id,
                 start: this.start,
-                end: this.end
+                end: this.end,
+                shape: "polyline"
             };
             // 加入非默认属性
             if (this.points) {
